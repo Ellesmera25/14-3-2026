@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Lá Thư Bí Mật</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(to bottom,#4facfe,#00f2fe);
+    font-family:Arial, sans-serif;
+}
+
+/* Ẩn checkbox */
+#open{
+    display:none;
+}
+
+/* Hình lá thư */
+.envelope{
+    width:200px;
+    height:130px;
+    background:#fff;
+    position:relative;
+    cursor:pointer;
+    border-radius:5px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Nắp thư */
+.envelope::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    border-left:100px solid transparent;
+    border-right:100px solid transparent;
+    border-bottom:65px solid #ddd;
+}
+
+/* Nội dung thư */
+.letter{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) scale(0);
+    width:300px;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+    transition:0.4s;
+}
+
+/* Khi bấm vào lá thư */
+#open:checked ~ .letter{
+    transform:translate(-50%,-50%) scale(1);
+}
+
+h2{
+    margin-top:0;
+}
+</style>
+</head>
+
+<body>
+
+<input type="checkbox" id="open">
+
+<label for="open" class="envelope"></label>
+
+<div class="letter">
+    <h2>Lá thư của bạn</h2>
+    
+    <!-- Bạn có thể sửa nội dung tại đây -->
+    <p>
+    Xin chào!  
+    Đây là nội dung lá thư của bạn.  
+    Bạn có thể thay đổi đoạn văn này thành bất kỳ thông điệp nào bạn muốn.
+    </p>
+
+</div>
+
+</body>
+</html>
